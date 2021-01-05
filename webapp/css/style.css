@@ -1,0 +1,7 @@
+/* Enter your custom styles here */
+.stickyToolbar {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 101;
+}

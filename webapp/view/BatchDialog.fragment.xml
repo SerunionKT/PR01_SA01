@@ -1,0 +1,55 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core">
+	<Dialog title="Lote proveedor" id="ListDialog2" afterClose="onAfterClose">
+		<l:VerticalLayout>
+			<l:HorizontalLayout class="sapUiContentPadding">
+				<Label text="Material" design="Bold" id="BatchLabel" class="sapUiContentPadding"/>
+			</l:HorizontalLayout>
+			<l:HorizontalLayout class="sapUiContentPadding">
+				<Label text="Material" labelFor="inputMatnr" width="8em"/>
+				<Input value="" change="onInputMatChange" width="auto" id="inputMatnr"/>
+			</l:HorizontalLayout>
+			<l:HorizontalLayout class="sapUiContentPadding">
+				<Label text="Cantidad" labelFor="inputQuantity" width="8em"/>
+				<Input value="" change="onInputCantChange" id="inputQuantity" width="50%"/>
+			</l:HorizontalLayout>
+			<l:HorizontalLayout class="sapUiContentPadding">
+				<Label text="Unidad" labelFor="inputUm" width="8em"/>
+				<Input value="" change="onInputUmChange" width="3em" id="inputUm"/>
+			</l:HorizontalLayout>
+			<l:HorizontalLayout class="sapUiContentPadding">
+				<Label text="Fecha Caducidad" labelFor="DP2" width="8em"/>
+				<DatePicker id="DP2" value="" valueFormat="dd-mm-yyyy" displayFormat="long" change="handleChange" class="sapUiContentPadding" width="15em"/>
+			</l:HorizontalLayout>
+			<l:HorizontalLayout class="sapUiContentPadding">
+				<Label text="Lote Proveedor" labelFor="buttonCalibre" width="8em"/>
+				<Input value="" change="onInputCantChange" width="auto" id="inputBatch"/>
+				<ToggleButton text="Nuevo Lote" width="auto" id="buttonLote" press="onNuevoLotePress" type="Default"/>
+			</l:HorizontalLayout>
+			<Toolbar width="100%" height="1px"/>
+			<l:HorizontalLayout class="sapUiContentPadding" id="HorizontalLayout0" visible="false">
+				<Label text="Cantidad" labelFor="inputHidden0" width="8em" visible="false" id="inputHidden00"/>
+				<Input value="" change="onInputCantChange" id="inputHidden0" width="50%" visible="false"/>
+			</l:HorizontalLayout>
+			<l:HorizontalLayout class="sapUiContentPadding" id="HorizontalLayout1" visible="false">
+				<Label text="Unidad" labelFor="inputHidden1" width="8em" visible="false" id="inputHidden11"/>
+				<Input value="" change="onInputUmChange" width="3em" id="inputHidden1" visible="false"/>
+			</l:HorizontalLayout>
+			<l:HorizontalLayout class="sapUiContentPadding" id="HorizontalLayout2" visible="false">
+				<Label text="Fecha Caducidad" labelFor="inputHidden2" width="8em" visible="false" id="inputHidden22"/>
+				<DatePicker id="inputHidden2" value="" valueFormat="dd-mm-yyyy" displayFormat="long" change="handleChange" class="sapUiContentPadding" width="15em" visible="false"/>
+			</l:HorizontalLayout>
+			<l:HorizontalLayout class="sapUiContentPadding" id="HorizontalLayout3" visible="false">
+				<Label text="Lote Proveedor" labelFor="inputHidden3" width="8em" visible="false" id="inputHidden33"/>
+				<Input value="" change="onInputCantChange" width="auto" visible="false" id="inputHidden3"/>
+				<Button text="Añadir Lote" width="auto" id="buttonAddLote" press="onAddLotePress" type="Default" visible="false"/>
+			</l:HorizontalLayout>
+		</l:VerticalLayout>
+		<beginButton>
+			<Button text="Guardar" press="onSaveBatch"/>
+		</beginButton>
+		<endButton>
+			<Button text="Incidencia" press="onIncidenciaBatch"/>
+			<Button text="Cerrar" press="onCloseBatch"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

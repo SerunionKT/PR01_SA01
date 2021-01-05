@@ -1,0 +1,19 @@
+<core:FragmentDefinition 
+	xmlns="sap.m" xmlns:core="sap.ui.core">
+	<ViewSettingsDialog confirm="handleSortDialogConfirm">
+		<sortItems>
+			<ViewSettingsItem text="Material" key="Matnr" selected="true"/>
+			<ViewSettingsItem text="Material Proveedor" />
+			<ViewSettingsItem text="Control" key="Control"/>
+			<ViewSettingsItem text="Descripción" key="Maktx"/>
+			<ViewSettingsItem text="Fecha entrega" key="Eindt"/>
+			<ViewSettingsItem text="Edi" key="Edi"/>
+			<ViewSettingsItem text="Albarán" key="Delnote"/>
+			<ViewSettingsItem text="Lote proveedor" key="Batch"/>
+			<ViewSettingsItem text="Fecha caducidad" key="Vfdat"/>
+			<ViewSettingsItem text="Cantidad" key="Quantity"/>
+			<ViewSettingsItem text="Unidad de medida" key="Um"/>
+			<ViewSettingsItem text="Precio" key="Grossprice"/>
+		</sortItems>
+	</ViewSettingsDialog>
+</core:FragmentDefinition>

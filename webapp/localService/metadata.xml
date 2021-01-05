@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema Namespace="ZPR01_SA01_SRV" xml:lang="es" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+			<EntityType Name="werksF4" sap:content-version="1">
+				<Key><PropertyRef Name="Werks"/></Key><Property Name="Werks" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Centro" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Name1" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Nombre 1" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="t006a" sap:content-version="1">
+				<Key><PropertyRef Name="Msehi"/></Key><Property Name="Msehi" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Un.medida int." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="unit-of-measure"/><Property Name="Msehl" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Texto UM" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="zpr01_sa01" sap:content-version="1">
+				<Key><PropertyRef Name="Intid"/><PropertyRef Name="Userid"/><PropertyRef Name="Werks"/><PropertyRef Name="Lifnr"/><PropertyRef Name="Ebeln"/><PropertyRef Name="Idnlf"/></Key><Property Name="Matnr" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Matnr" sap:sortable="false"/><Property Name="Intid" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="Intid" sap:sortable="false"/><Property Name="Userid" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="Userid" sap:sortable="false"/><Property Name="Werks" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Centro" sap:sortable="false"/><Property Name="Recdate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Fecha entrega" sap:sortable="false"/><Property Name="Lifnr" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Proveedor" sap:sortable="false"/><Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="35" sap:unicode="false" sap:label="Descripción" sap:sortable="false"/><Property Name="Ebeln" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Pedido compras" sap:sortable="false"/><Property Name="Idnlf" Type="Edm.String" Nullable="false" MaxLength="35" sap:unicode="false" sap:label="Nº mat.prov." sap:sortable="false"/><Property Name="Control" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Control" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Maktx" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Denominación" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Edi" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="EDI" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Aspect" Type="Edm.Decimal" Nullable="false" Precision="3" Scale="2" sap:unicode="false" sap:label="Clase tiempo espera"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Carrier" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Cualif.med.transp."
+					sap:sortable="false" sap:filterable="false"/><Property Name="Weight" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Gr.medios transporte"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Thickness" Type="Edm.Decimal" Nullable="false" Precision="3" Scale="0" sap:unicode="false" sap:label="Recargo tpo.espera"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Delnote" Type="Edm.String" Nullable="false" MaxLength="16" sap:unicode="false" sap:label="Nota de entrega"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Batch" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Lote" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Vfdat" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="FeCadc/FePrfCns" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Quantity" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:label="Cantidad"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Um" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="UM base" sap:sortable="false"
+					sap:filterable="false" sap:semantics="unit-of-measure"/><Property Name="Grossprice" Type="Edm.Decimal" Nullable="false" Precision="14" Scale="3" sap:unicode="false" sap:label="Valor bruto"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityContainer Name="ZPR01_SA01_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="werksF4Set" EntityType="ZPR01_SA01_SRV.werksF4" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/><EntitySet Name="t006aSet" EntityType="ZPR01_SA01_SRV.t006a" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/><EntitySet Name="zpr01_sa01Set" EntityType="ZPR01_SA01_SRV.zpr01_sa01" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/></EntityContainer><atom:link rel="self"
+				href="https://webidecp-a0536d648.dispatcher.hana.ondemand.com/destinations/Exequam-S4H/sap/opu/odata/sap/ZPR01_SA01_SRV/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/><atom:link rel="latest-version"
+				href="https://webidecp-a0536d648.dispatcher.hana.ondemand.com/destinations/Exequam-S4H/sap/opu/odata/sap/ZPR01_SA01_SRV/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

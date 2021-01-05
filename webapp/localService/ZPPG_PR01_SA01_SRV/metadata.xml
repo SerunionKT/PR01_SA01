@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema Namespace="ZPPG_PR01_SA01_SRV" xml:lang="es" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+			<EntityType Name="ZPPH_PR01_SA01_LIFNR" sap:content-version="1">
+				<Key><PropertyRef Name="Mandt"/><PropertyRef Name="Lifnr"/></Key><Property Name="Mandt" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Mandante" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Lifnr" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Proveedor" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Name1" Type="Edm.String" Nullable="false" MaxLength="35" sap:label="Apellido" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="ZXXS_PR01_INC_FLD" sap:content-version="1">
+				<Key><PropertyRef Name="Ebeln"/><PropertyRef Name="Ebelp"/></Key><Property Name="Ebeln" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Doc.compras" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Ebelp" Type="Edm.String" Nullable="false" MaxLength="5" sap:label="Posición" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="18" sap:label="Material" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Bsgru" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Motivo pedido" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Comment" Type="Edm.String" Nullable="false" MaxLength="200" sap:label="Texto (200 c.)" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="ZXXS_PR01_INC_HDR" sap:content-version="1">
+				<Key><PropertyRef Name="Vbeln"/></Key><Property Name="Vbeln" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Doc.comercial" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Lifex" Type="Edm.String" Nullable="false" MaxLength="35" sap:label="Entrega externa" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Bsgru" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Motivo pedido" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Comment" Type="Edm.String" Nullable="false" MaxLength="200" sap:label="Texto (200 c.)" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="ZPPS_PR01_SA01_SUB_DET" sap:content-version="1">
+				<Key><PropertyRef Name="Werks"/><PropertyRef Name="Matnr"/></Key><Property Name="Werks" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Centro" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="18" sap:label="Material" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Subing" Type="Edm.String" Nullable="false" MaxLength="250" sap:label="Subingrediente" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Allerg" Type="Edm.String" Nullable="false" MaxLength="250" sap:label="Alérgenos" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Ycheck" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Casilla de selección" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Nutri" Type="Edm.String" Nullable="false" MaxLength="250" sap:label="Info Nutricional" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="ZPPH_PR01_SA01_MSEHI" sap:content-version="1">
+				<Key><PropertyRef Name="Spras"/><PropertyRef Name="Msehi"/></Key><Property Name="Spras" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="Idioma" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Msehi" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Un.medida int." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="unit-of-measure"/><Property Name="Mseh3" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Comercial" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Mseh6" Type="Edm.String" Nullable="false" MaxLength="6" sap:label="Técnico" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Mseht" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Texto UM" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Msehl" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Ud.medida txt.1" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="ZPPH_PR01_SA01_WERKS" sap:content-version="1">
+				<Key><PropertyRef Name="Mandt"/><PropertyRef Name="Werks"/></Key><Property Name="Mandt" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Mandante" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Werks" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Centro" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Name1" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Nombre 1" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="ZPPH_PR01_SA01_GRUND" sap:content-version="1">
+				<Key><PropertyRef Name="Grund"/></Key><Property Name="Grund" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Motivo del mov." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Grtxt" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="Causa" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="ZPPH_PR01_SA01_BSGRU" sap:content-version="1">
+				<Key><PropertyRef Name="Bsgru"/></Key><Property Name="Bsgru" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Motivo pedido" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Bezei" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Denominación" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="ZPPH_PR01_SA01_MATNR" sap:content-version="1">
+				<Key><PropertyRef Name="Matnr"/></Key><Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="18" sap:label="Material" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/><Property Name="Maktx" Type="Edm.String" MaxLength="40" sap:label="Denominación" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/><Property Name="Lifnr" Type="Edm.String" MaxLength="10" sap:label="Proveedor" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/></EntityType>
+			<EntityType Name="ZMMS_PR01_SA01" sap:content-version="1">
+				<Key><PropertyRef Name="Intid"/><PropertyRef Name="Userid"/><PropertyRef Name="Werks"/><PropertyRef Name="Eindt"/></Key><Property Name="Intid" Type="Edm.Int32" Nullable="false" sap:label="Internal ID" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/><Property Name="Userid" Type="Edm.Int32" Nullable="false" sap:label="User ID" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/><Property Name="Intix" Type="Edm.Int32" sap:label="Internal index" sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="Parnt" Type="Edm.Int32" sap:label="Parent ID" sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="Perma" Type="Edm.String" MaxLength="1" sap:label="Boolean_01" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/><Property Name="Werks" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Centro" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/><Property Name="Eindt" Type="Edm.DateTime" Nullable="false" Precision="7" sap:label="Fecha entrega" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/><Property Name="Lifnr" Type="Edm.String" MaxLength="10" sap:label="Proveedor" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/><Property Name="Name1" Type="Edm.String" MaxLength="30" sap:label="Nombre 1" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/><Property Name="Ebeln" Type="Edm.String" MaxLength="10" sap:label="Doc.compras" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/><Property Name="Ebelp" Type="Edm.String" MaxLength="5" sap:label="Posición" sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="Idnlf" Type="Edm.String" MaxLength="35" sap:label="Mat.proveedor" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/><Property Name="Matnr" Type="Edm.String" MaxLength="18" sap:label="Material" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/><Property Name="Cntrl" Type="Edm.String" MaxLength="1" sap:label="Casilla de selección" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/><Property Name="Maktx" Type="Edm.String" MaxLength="40" sap:label="Denominación" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/><Property Name="Edico" Type="Edm.String" MaxLength="1" sap:label="Boolean_01" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/><Property Name="Xblnr" Type="Edm.String" MaxLength="35" sap:label="Referencia" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/><Property Name="Verur" Type="Edm.String" MaxLength="35" sap:label="Documento orig." sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/><Property Name="Charg" Type="Edm.String" MaxLength="15" sap:label="Lote-proveedor" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/><Property Name="Vfdat" Type="Edm.DateTime" Precision="7" sap:label="FeCadc/FePrfCns" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/><Property Name="Ztemp" Type="Edm.Double" sap:label="Temperature" sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="Zaspc" Type="Edm.String" MaxLength="1" sap:label="Quality check type" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/><Property Name="Ztran" Type="Edm.String" MaxLength="1" sap:label="Quality check type" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/><Property Name="Zwght" Type="Edm.String" MaxLength="1" sap:label="Quality check type" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/><Property Name="Zclbr" Type="Edm.String" MaxLength="1" sap:label="Quality check type" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/><Property Name="Menge" Type="Edm.Decimal" Precision="13" Scale="3" sap:label="Cantidad pedido" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/><Property Name="Meins" Type="Edm.String" MaxLength="3" sap:label="Unidad de medida base" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/><Property Name="Brtwr" Type="Edm.Decimal" Precision="12" Scale="3" sap:label="Valor bruto" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/><Property Name="NoOk" Type="Edm.String" MaxLength="1" sap:label="Variable booleana (X=verdadero, espacio=falso)" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/><Property Name="Bname" Type="Edm.String" MaxLength="12" sap:label="Usuario" sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="Vbeln" Type="Edm.String" MaxLength="10" sap:label="Entrega" sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="Vbelp" Type="Edm.String" MaxLength="6" sap:label="Posición" sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="Ekgrp" Type="Edm.String" MaxLength="3" sap:label="Grupo-compras" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/><Property Name="Batch" Type="Edm.String" MaxLength="10" sap:label="Lote" sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="TempMin" Type="Edm.Double" sap:label="TEMP_MIN" sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="TempMax" Type="Edm.Double" sap:label="TEMP_MAX" sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="MengeOld" Type="Edm.Decimal" Precision="13" Scale="3" sap:label="Cantidad pedido" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/><Property Name="Bsart" Type="Edm.String" MaxLength="4" sap:label="Clase documento" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/><Property Name="Msehl" Type="Edm.String" MaxLength="30" sap:label="Ud.medida txt.1" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/></EntityType>
+			<EntityContainer Name="ZPPG_PR01_SA01_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="ZPPH_PR01_01_LIFNRSet" EntityType="ZPPG_PR01_SA01_SRV.ZPPH_PR01_SA01_LIFNR" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ZXXS_PR01_INC_FLDSet" EntityType="ZPPG_PR01_SA01_SRV.ZXXS_PR01_INC_FLD" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ZXXS_PR01_INC_HDRSet" EntityType="ZPPG_PR01_SA01_SRV.ZXXS_PR01_INC_HDR" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ZPPS_PR01_SA01_SUB_DETSet" EntityType="ZPPG_PR01_SA01_SRV.ZPPS_PR01_SA01_SUB_DET" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ZPPH_PR01_SA01_MSEHISet" EntityType="ZPPG_PR01_SA01_SRV.ZPPH_PR01_SA01_MSEHI" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ZPPH_PR01_SA01_WERKSSet" EntityType="ZPPG_PR01_SA01_SRV.ZPPH_PR01_SA01_WERKS" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ZPPH_PR01_SA01_GRUNDSet" EntityType="ZPPG_PR01_SA01_SRV.ZPPH_PR01_SA01_GRUND" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ZPPH_PR01_SA01_BSGRUSet" EntityType="ZPPG_PR01_SA01_SRV.ZPPH_PR01_SA01_BSGRU" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ZPPH_PR01_SA01_MATNRSet" EntityType="ZPPG_PR01_SA01_SRV.ZPPH_PR01_SA01_MATNR" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ZMMS_PR01_SA01Set" EntityType="ZPPG_PR01_SA01_SRV.ZMMS_PR01_SA01" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/></EntityContainer><atom:link rel="self"
+				href="https://webidecp-a0536d648.dispatcher.hana.ondemand.com/destinations/Serunion_FIORI_FrontEnd/sap/opu/odata/sap/ZPPG_PR01_SA01_SRV/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/><atom:link rel="latest-version"
+				href="https://webidecp-a0536d648.dispatcher.hana.ondemand.com/destinations/Serunion_FIORI_FrontEnd/sap/opu/odata/sap/ZPPG_PR01_SA01_SRV/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

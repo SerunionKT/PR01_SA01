@@ -1,0 +1,213 @@
+<mvc:View controllerName="PR01_SA01.PR01_SA01.controller.View_SA" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:smartFilterBar="sap.ui.comp.smartfilterbar" xmlns:smartTable="sap.ui.comp.smarttable" xmlns:core="sap.ui.core"
+	xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1" displayBlock="true" xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>Recepción de mercancía}">
+					<content>
+						<VBox fitContainer="true">
+							<smartFilterBar:SmartFilterBar id="smartFilterBar" persistencyKey="FilterVariant" considerSelectionVariants="true"
+								entitySet="ZMMS_PR01_SA01Set" search="onSearchSmart" initialized="onSmartFilterBarInit">
+									<smartFilterBar:customData>
+										<core:CustomData key="dateFormatSettings" value='\{"UTC": true}'/>
+									</smartFilterBar:customData>
+								<smartFilterBar:controlConfiguration>
+									<smartFilterBar:ControlConfiguration key="Userid" visibleInAdvancedArea="false" visible="false">
+										<smartFilterBar:defaultFilterValues>
+											<smartFilterBar:SelectOption low=""></smartFilterBar:SelectOption>
+										</smartFilterBar:defaultFilterValues>
+									</smartFilterBar:ControlConfiguration>
+									<smartFilterBar:ControlConfiguration key="Intid" visibleInAdvancedArea="false" visible="false">
+										<smartFilterBar:defaultFilterValues>
+											<smartFilterBar:SelectOption low="" id="IntidSmartLow"></smartFilterBar:SelectOption>
+										</smartFilterBar:defaultFilterValues>
+									</smartFilterBar:ControlConfiguration>
+									<smartFilterBar:ControlConfiguration key="Werks" visibleInAdvancedArea="true">
+										<smartFilterBar:defaultFilterValues>
+											<!--<smartFilterBar:SelectOption low="LA26"></smartFilterBar:SelectOption>-->
+											<!--<smartFilterBar:SelectOption low="G896"></smartFilterBar:SelectOption>-->
+										</smartFilterBar:defaultFilterValues>
+									</smartFilterBar:ControlConfiguration>
+									<smartFilterBar:ControlConfiguration key="Eindt" id="DR_SF" conditionType="sap.ui.comp.config.condition.DateRangeType"
+										visibleInAdvancedArea="true"></smartFilterBar:ControlConfiguration>
+									<smartFilterBar:ControlConfiguration key="Lifnr" visibleInAdvancedArea="true"></smartFilterBar:ControlConfiguration>
+									<smartFilterBar:ControlConfiguration key="Name1" visibleInAdvancedArea="true"></smartFilterBar:ControlConfiguration>
+									<smartFilterBar:ControlConfiguration key="Ebeln" visibleInAdvancedArea="true"></smartFilterBar:ControlConfiguration>
+									<smartFilterBar:ControlConfiguration key="Maktx" visibleInAdvancedArea="true"></smartFilterBar:ControlConfiguration>
+								</smartFilterBar:controlConfiguration>
+								<!-- layout data used to make the table growing but the filter bar fixed -->
+								<smartFilterBar:layoutData>
+									<FlexItemData shrinkFactor="0"/>
+								</smartFilterBar:layoutData>
+							</smartFilterBar:SmartFilterBar>
+							<ScrollContainer width="100%" horizontal="true" vertical="true" focusable="true">
+								<smartTable:SmartTable id="smartTable" entitySet="ZMMS_PR01_SA01Set" smartFilterId="smartFilterBar" enableAutoBinding="false"
+									beforeRebindTable="onBeforeRebind" initialise="onTableInit" tableType="Table" useExportToExcel="false" useVariantManagement="false"
+									useTablePersonalisation="false" header="Recepciones"
+									requestAtLeastFields="Matnr,Intid,Userid,Werks,Eindt,Lifnr,Name1,Ebeln,Ebelp,Idnlf,Cntrl,Maktx,Edico,Xblnr,Ztemp,Zaspc,Zwght,Ztran,Zclbr,Charg,Vfdat,Menge,Meins,Brtwr,Parnt,NoOk,Vbeln,Bname,TempMin,TempMax,Msehl,Bsart"
+									showRowCount="true">
+									<smartTable:customToolbar>
+										<OverflowToolbar id="stickyToolbar" design="Transparent" class="stickyToolbar">
+											<Button icon="sap-icon://message-popup" type="Default" text="Incidencia" press="onIncidenciaPress"/>
+											<!--<Button icon="sap-icon://add-document" type="Default" text="Nuevo material" press="onNewMaterial"/>-->
+											<!--<Button icon="sap-icon://request" type="Default" text="Nueva entrega" press="onNewDelivery"/>-->
+											<ToolbarSpacer/>
+											<OverflowToolbarButton icon="sap-icon://sort" text="Sort" press="onSort"/>
+											<OverflowToolbarButton icon="sap-icon://copy" press="onCopy"/>
+											<OverflowToolbarButton icon="sap-icon://delete" type="Transparent" press="onDeletePress"/>
+										</OverflowToolbar>
+									</smartTable:customToolbar>
+									<smartTable:layoutData>
+										<FlexItemData growFactor="1" baseSize="0%"/>
+									</smartTable:layoutData>
+									<Table width="101%" noDataText="No se han encontrado datos." fixedLayout="false" alternateRowColors="true" mode="MultiSelect" id="tableSA"
+										sticky="ColumnHeaders,HeaderToolbar">
+										<items>
+											<ColumnListItem type="Active" id="item1">
+												<cells>
+													<!--<template:if test="{= {${Parnt} === 0}}">
+														<template:then>
+															<Text text="{Matnr}" width="auto" id="input8"/>
+														</template:then>
+														<template:else>
+															<Input value="{Matnr}" width="auto" id="input8a"/>
+														</template:else>
+													</template:if>-->
+													<HBox>
+														<Text text="{Matnr}" width="auto" id="input8" visible="{= ${Parnt} === 0 ? true : false}"/>
+														<Input value="{Matnr}" width="auto" id="input8a" change="updateLine" visible="{= ${Parnt} !== 0 ? true : false}" showValueHelp="true"
+															valueHelpRequest="handleValueHelp"/>
+													</HBox>
+													<Text text="{Idnlf}" width="auto" id="input10"/>
+													<Text text="{Cntrl}" width="auto" id="input9"/>
+													<!--<Text text="{Maktx}" width="auto" id="input11"/>-->
+													<Button text="{Maktx}" width="auto" type="Transparent" press="onMatnrPress" id="input11"/>
+													<!--<Text text="{Edi}" width="auto" id="input12"/>-->
+													<Text text="{path : 'Eindt', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }" width="auto" id="inputEindt"/>
+													<core:Icon src="sap-icon://circle-task-2" id="EdiIcon" color="{= ${Edico} === '0' ? '#FF0000' : '#00FF00'}"/>
+													<!--<Input value="" width="auto" change="onInputChange" id="inputT"/>-->
+													<!--<HBox>
+													<Text text="{Aspect}" width="auto" id="input13"/>-->
+													<!--<Button icon="sap-icon://accept" width="auto" id="buttoncata1" press="onCataOkPress" type="Accept"/>
+													<Button icon="sap-icon://decline" width="auto" id="buttoncata2" press="onCataKoPress" type="Reject"/>
+												</HBox>-->
+													<Input value="{Xblnr}" width="100%" id="input14" editable="{= ${Edico} === '0' ? true : ( ${Bsart} === 'YTRI' ? true : ( ${Bsart} === 'YTRU' ? true : false )) }" change="updateLine"/>
+													<!--<Button text="{Batch}" width="auto" id="input15" type="Transparent" press="onBatchPress" visible="{= ${Edi} === '0' ? false : true }"/>-->
+													<!--<Button text="{Batch}" width="auto" id="input15" type="Transparent" press="onBatchPress" visible="true"/>-->
+													<Input value="{Charg}" width="auto" id="input15" visible="true" change="updateLine"/>
+													<!--<Text text="{Vfdat}" width="auto" id="input16" type= ""/>-->
+													<!--<Text text="{path : 'Vfdat', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"/>-->
+													<DatePicker value="{path : 'Vfdat', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }" change="updateLine"/>
+													<Button icon="sap-icon://add" width="auto" id="buttonadd" press="onAddPress" type="Default"/>
+													<!--<Input value="{Menge}" change="onInputChange"/>-->
+													<!--<Input value="{path : 'Menge', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 3, roundingMode: 'away_from_zero' } }"-->
+													<!--	change="updateLine"/>-->
+													<Input value="{Menge}" type="Number" change="updateLine"/>
+													<!--<Text text="{Meins}" width="auto" id="input19"/>-->
+													<!--<Input value="{Meins}" width="auto" id="input19" change="updateLine" editable="false"/>-->
+													<Button text="{Meins}" width="auto" id="input19" type="Transparent" press="onUmDetailPress"/>
+													<!--<Text text="{Brtwr}" width="auto" id="input20"/>-->
+													<Text text="{path : 'Brtwr', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 2, roundingMode: 'away_from_zero' }}"/>
+													<CheckBox text="" width="auto" id="checkbox01" select="updateLine" selected="{= ${NoOk} === 'X' ? true : false}"/>
+												</cells>
+											</ColumnListItem>
+										</items>
+										<columns>
+											<Column id="column11" width="10%">
+												<header>
+													<Label text="Material" id="label11"/>
+												</header>
+											</Column>
+											<Column id="column12" width="5%">
+												<header>
+													<Label text="Material prov." id="label12"/>
+												</header>
+											</Column>
+											<Column id="column15" width="3%">
+												<header>
+													<Label text="Control" id="label15"/>
+												</header>
+											</Column>
+											<Column id="column13" width="13%">
+												<header>
+													<!--<Label text="{/#zpr01_01/Control/@sap:label}" id="label13"/>-->
+													<Label text="Descripción material" id="label13"/>
+												</header>
+											</Column>
+											<Column id="columnEindt" width="12%">
+												<header>
+													<Label text="Fecha entrega" id="labelEindt"/>
+												</header>
+											</Column>
+											<Column id="column14" width="5%">
+												<header>
+													<!--<Label text="{/#zpr01_01/Description/@sap:label}" id="label14"/>-->
+													<Label text="EDI" id="label14"/>
+												</header>
+											</Column>
+											<Column id="column17" width="12%">
+												<header>
+													<Label text="Albarán" id="label17"/>
+												</header>
+											</Column>
+											<Column id="column18" width="10%">
+												<header>
+													<Label text="Lote Proveedor" id="label18"/>
+												</header>
+											</Column>
+											<Column id="column20" width="12%">
+												<header>
+													<Label text="Fecha caducidad" id="label19"/>
+												</header>
+											</Column>
+											<Column id="column19" width="5%">
+												<header>
+													<Label text="Sello" id="label20"/>
+												</header>
+											</Column>
+											<Column id="column22" width="7%">
+												<header>
+													<Label text="Cantidad"/>
+												</header>
+											</Column>
+											<Column id="column23" width="5%">
+												<header>
+													<Label text="Ud"/>
+												</header>
+											</Column>
+											<Column id="column24" width="6%">
+												<header>
+													<Label text="Precio(€)"/>
+												</header>
+											</Column>
+											<Column id="column25" width="6%">
+												<header>
+													<Label text="No OK"/>
+												</header>
+											</Column>
+										</columns>
+									</Table>
+								</smartTable:SmartTable>
+							</ScrollContainer>
+						</VBox>
+					</content>
+					<footer>
+						<OverflowToolbar id="otbFooter">
+							<ToolbarSpacer/>
+							<Button type="Emphasized" text="Un. Medida" press="onMedida">
+								<layoutData><OverflowToolbarLayoutData priority="NeverOverflow"/></layoutData>
+							</Button>
+							<Button type="Emphasized" text="Cancelar" press="handleWarning2MessageBoxPress">
+								<layoutData><OverflowToolbarLayoutData priority="NeverOverflow"/></layoutData>
+							</Button>
+							<Button type="Emphasized" text="Ejecutar" press="onEjecutar">
+								<layoutData><OverflowToolbarLayoutData priority="NeverOverflow"/></layoutData>
+							</Button>
+						</OverflowToolbar>
+					</footer>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

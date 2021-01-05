@@ -1,0 +1,40 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core">
+	<Dialog title="Comprobación de calidad" id="ListDialog" afterClose="onAfterClose">
+		<l:VerticalLayout>
+			<l:HorizontalLayout class="sapUiContentPadding">
+				<Label text="Tº" labelFor="inputT0" width="10em"/>
+				<Input type="Number" value="" change="onInputT0Change" liveChange="onTempLiveChange" width="50%" id="inputT0" valueState="None"/>
+			</l:HorizontalLayout>
+			<l:HorizontalLayout class="sapUiContentPadding">
+				<Label text="Envase/Aspecto" labelFor="buttonEnv" width="10em"/>
+				<ToggleButton icon="sap-icon://accept" width="auto" id="buttonEnv" pressed="false" press="onCataOkPress" type="Accept"/>
+				<ToggleButton icon="sap-icon://decline" width="auto" id="buttonEnv2" pressed="false" press="onCataOkPress" type="Reject"/>
+				<Label text="" visible="false" id="Zaspc"/>
+			</l:HorizontalLayout>
+			<l:HorizontalLayout class="sapUiContentPadding">
+				<Label text="Transporte/Repartidor" labelFor="buttonTra" width="10em"/>
+				<ToggleButton icon="sap-icon://accept" width="auto" id="buttonTra" pressed="false" press="onCataOkPress" type="Accept"/>
+				<ToggleButton icon="sap-icon://decline" width="auto" id="buttonTra2" pressed="false" press="onCataOkPress" type="Reject"/>
+				<Label text="" visible="false" id="Ztran"/>
+			</l:HorizontalLayout>
+			<l:HorizontalLayout class="sapUiContentPadding">
+				<Label text="Peso" labelFor="buttonPeso" width="10em"/>
+				<ToggleButton icon="sap-icon://accept" width="auto" id="buttonPeso" press="onCataOkPress" type="Accept"/>
+				<ToggleButton icon="sap-icon://decline" width="auto" id="buttonPeso2" press="onCataOkPress" type="Reject"/>
+				<Label text="" visible="false" id="Zwght"/>
+			</l:HorizontalLayout>
+			<l:HorizontalLayout class="sapUiContentPadding">
+				<Label text="Calibre/Gramaje" labelFor="buttonCalibre" width="10em"/>
+				<ToggleButton icon="sap-icon://accept" width="auto" id="buttonCalibre" press="onCataOkPress" type="Accept"/>
+				<ToggleButton icon="sap-icon://decline" width="auto" id="buttonCalibre2" press="onCataOkPress" type="Reject"/>
+				<Label text="" visible="false" id="Zclbr"/>
+			</l:HorizontalLayout>
+		</l:VerticalLayout>
+		<beginButton>
+			<Button text="Guardar" id="SelloSaveBttn" press="onSaveSello"/>
+		</beginButton>
+		<endButton>
+			<Button text="Cerrar" press="onCloseSello"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

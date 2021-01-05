@@ -1,0 +1,18 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<SelectDialog
+		noDataText="No se encontraron unidades de medida"
+		title="Seleccione unidad de medida"
+		search="handleUMSearch"
+		confirm="handleUMClose"
+		cancel="handleUMClose"
+		items="{
+			path: '/ZPPH_PR01_SA01_MSEHISet'
+		}" >
+		<StandardListItem
+			id = "list01"
+			title="{Mseh3}"
+			description="{Msehl}" />
+	</SelectDialog>
+</core:FragmentDefinition>
