@@ -195,6 +195,9 @@
 					<footer>
 						<OverflowToolbar id="otbFooter">
 							<ToolbarSpacer/>
+							<Button type="Emphasized" text="Recuperar" press="onRecuperar">
+								<layoutData><OverflowToolbarLayoutData priority="NeverOverflow"/></layoutData>
+							</Button>								
 							<Button type="Emphasized" text="Un. Medida" press="onMedida">
 								<layoutData><OverflowToolbarLayoutData priority="NeverOverflow"/></layoutData>
 							</Button>

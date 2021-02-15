@@ -1351,6 +1351,10 @@ sap.ui.define([
 			}
 		},
 
+		onRecuperar: function (oEvent) {
+			gvIntid = -2;
+		},
+		
 		onSearchSmart: function (oEvent) {
 			gvIntid = -1;
 		},
