@@ -1353,6 +1353,24 @@ sap.ui.define([
 
 		onRecuperar: function (oEvent) {
 			gvIntid = -2;
+			var url = "/sap/opu/odata/sap/ZPPG_PR01_SA01_SRV/";
+			var oData2 = new sap.ui.model.odata.v2.ODataModel(url);
+
+			var model2 = new sap.ui.model.json.JSONModel();
+			var oFilter = new Filter("Intid", sap.ui.model.FilterOperator.StartsWith, gvIntid);
+			
+			oData2.read("/ZMMS_PR01_SA01Set", {
+				filters: [oFilter],
+				success: function (oData, oResponse) {
+
+					model2.setData({
+						items: oData.results
+					});
+
+					comboBoxHdr.setModel(model2);
+				}
+			});	
+			gvIntid = 0;
 		},
 		
 		onSearchSmart: function (oEvent) {
