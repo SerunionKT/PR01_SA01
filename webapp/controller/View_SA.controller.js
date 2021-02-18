@@ -33,6 +33,7 @@ sap.ui.define([
 	return Controller.extend("PR01_SA01.PR01_SA01.controller.View_SA", {
 		onInit: function () {
 
+			gvIntid = -3; //Initialize
 			var itemTemplate = new sap.ui.core.ListItem(); //  creating a ListItem object                  
 			itemTemplate.bindProperty("key", "Grund"); //  bind for the "text" property a certain path from the model
 			itemTemplate.bindProperty("text", "Grtxt");
@@ -1357,7 +1358,7 @@ sap.ui.define([
 			var oData2 = new sap.ui.model.odata.v2.ODataModel(url);
 
 			var model2 = new sap.ui.model.json.JSONModel();
-			var oFilter = new Filter("Intid", sap.ui.model.FilterOperator.StartsWith, gvIntid);
+			var oFilter = new Filter("Intid", sap.ui.model.FilterOperator.EQ, gvIntid);
 			
 			oData2.read("/ZMMS_PR01_SA01Set", {
 				filters: [oFilter],
